@@ -101,8 +101,11 @@ uv run pytest tests -q
 Latest local validation: **45 tests passed** (Python 3.12.12), covering task generation,
 all 25 runtime APIs/verifiers, nine winning trajectory replays, scoring edge cases and
 error handling. See [sanitized JUnit results](validation/local-tests.xml). The wheel
-was built and required runtime/game/template/oracle assets were verified.
-These checks do not establish Docker execution or model parity.
+was built, installed in an isolated environment and used to generate a complete task.
+Separate [Harbor/Docker evidence and reproduction commands](validation/README.md)
+record all nine available oracle trajectories winning and all 25 no-op trials scoring
+zero, with zero execution/verifier errors.
+Neither local tests nor Docker replays establish model parity.
 
 ## Notes & Caveats
 

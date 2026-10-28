@@ -9,7 +9,8 @@ orchestrator:
 environment:
   type: docker
   # Kept `true` so a fresh clone always has the image; the reference run used
-  # `false` because its images were prebuilt once. Not score-relevant.
+  # `false` because its images were prebuilt once. Freeze image/dependency
+  # versions before parity; rebuilding alone does not guarantee identical inputs.
   force_build: true
   delete: true
   # The agent container is capped well below task.toml's declared budget: the
